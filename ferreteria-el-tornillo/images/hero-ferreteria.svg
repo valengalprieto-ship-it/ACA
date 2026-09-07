@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 550" width="100%" height="100%">
+  <defs>
+    <linearGradient id="wallGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="shelfGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#334155"/>
+    </linearGradient>
+    <linearGradient id="counterGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F4C81"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="accentOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00"/>
+      <stop offset="100%" stop-color="#E65100"/>
+    </linearGradient>
+    <linearGradient id="paintRed" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+    <linearGradient id="paintYellow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="metalGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="50%" stop-color="#F1F5F9"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+    <linearGradient id="woodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Background Wall -->
+  <rect width="900" height="550" fill="url(#wallGrad)"/>
+  
+  <!-- Floor -->
+  <polygon points="0,460 900,460 900,550 0,550" fill="#1E293B"/>
+  <line x1="0" y1="460" x2="900" y2="460" stroke="#FF6B00" stroke-width="4"/>
+
+  <!-- Pegboard Wall (Right side) -->
+  <rect x="500" y="40" width="360" height="320" rx="8" fill="#1E293B" stroke="#334155" stroke-width="3"/>
+  <g fill="#475569">
+    <!-- Pegboard holes grid -->
+    <pattern id="pegPattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="2.5" fill="#0F172A"/>
+    </pattern>
+    <rect x="500" y="40" width="360" height="320" fill="url(#pegPattern)"/>
+  </g>
+
+  <!-- Tools Hanging on Pegboard -->
+  <!-- Hammer -->
+  <g filter="url(#shadow)" transform="translate(530, 70)">
+    <!-- Handle -->
+    <rect x="18" y="30" width="12" height="110" rx="4" fill="url(#woodGrad)"/>
+    <rect x="16" y="100" width="16" height="40" rx="4" fill="#FF6B00"/>
+    <!-- Head -->
+    <path d="M 5,20 L 40,20 L 45,35 L 5,35 Z" fill="url(#metalGrad)"/>
+    <path d="M 5,20 Q -5,10 -15,5 L -10,18 Q -3,22 5,25 Z" fill="url(#metalGrad)"/>
+  </g>
+
+  <!-- Saw -->
+  <g filter="url(#shadow)" transform="translate(610, 65)">
+    <!-- Blade -->
+    <polygon points="20,20 120,40 115,70 20,50" fill="url(#metalGrad)"/>
+    <!-- Teeth -->
+    <path d="M 20,50 L 30,53 L 35,50 L 45,53 L 50,50 L 60,53 L 65,50 L 75,53 L 80,50 L 90,53 L 95,50 L 105,53 L 110,50 L 115,70 L 20,50" fill="url(#metalGrad)"/>
+    <!-- Handle -->
+    <path d="M 0,15 C 0,5 25,5 25,20 L 25,55 C 25,70 0,70 0,55 Z" fill="url(#accentOrange)"/>
+    <circle cx="12" cy="35" r="7" fill="#1E293B"/>
+  </g>
+
+  <!-- Adjustable Wrenches -->
+  <g filter="url(#shadow)" transform="translate(740, 70)">
+    <rect x="12" y="35" width="12" height="110" rx="3" fill="url(#metalGrad)"/>
+    <rect x="10" y="100" width="16" height="45" rx="3" fill="#0F4C81"/>
+    <path d="M 0,10 C 0,-5 36,-5 36,10 L 30,35 L 6,35 Z" fill="url(#metalGrad)"/>
+    <circle cx="18" cy="18" r="8" fill="#334155"/>
+  </g>
+
+  <!-- Drill hanging -->
+  <g filter="url(#shadow)" transform="translate(790, 180)">
+    <path d="M 0,20 L 50,20 L 55,45 L 30,50 L 15,100 L -5,95 L 5,45 Z" fill="#0F4C81"/>
+    <rect x="10" y="90" width="20" height="15" fill="#FF6B00"/>
+    <rect x="-20" y="27" width="25" height="8" fill="url(#metalGrad)"/>
+    <polygon points="-30,31 -20,25 -20,37" fill="url(#metalGrad)"/>
+  </g>
+
+  <!-- Left Shelves & Supplies (Rack System) -->
+  <g filter="url(#shadow)">
+    <!-- Rack frame -->
+    <rect x="40" y="50" width="420" height="320" rx="6" fill="#1E293B" stroke="#334155" stroke-width="4"/>
+    <!-- Shelf 1 -->
+    <rect x="40" y="130" width="420" height="12" fill="url(#shelfGrad)"/>
+    <!-- Shelf 2 -->
+    <rect x="40" y="220" width="420" height="12" fill="url(#shelfGrad)"/>
+    <!-- Shelf 3 -->
+    <rect x="40" y="310" width="420" height="12" fill="url(#shelfGrad)"/>
+
+    <!-- Paint Cans on Top Shelf -->
+    <!-- Can 1 Red -->
+    <g transform="translate(60, 65)">
+      <rect x="0" y="10" width="45" height="55" rx="4" fill="url(#metalGrad)"/>
+      <rect x="0" y="25" width="45" height="25" fill="url(#paintRed)"/>
+      <ellipse cx="22.5" cy="10" rx="22.5" ry="4" fill="#E2E8F0"/>
+      <text x="22.5" y="42" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#FFF" text-anchor="middle">PINTURA</text>
+    </g>
+    <!-- Can 2 Blue -->
+    <g transform="translate(115, 65)">
+      <rect x="0" y="10" width="45" height="55" rx="4" fill="url(#metalGrad)"/>
+      <rect x="0" y="25" width="45" height="25" fill="#0F4C81"/>
+      <ellipse cx="22.5" cy="10" rx="22.5" ry="4" fill="#E2E8F0"/>
+      <text x="22.5" y="42" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#FFF" text-anchor="middle">AZUL</text>
+    </g>
+    <!-- Can 3 Yellow -->
+    <g transform="translate(170, 65)">
+      <rect x="0" y="10" width="45" height="55" rx="4" fill="url(#metalGrad)"/>
+      <rect x="0" y="25" width="45" height="25" fill="url(#paintYellow)"/>
+      <ellipse cx="22.5" cy="10" rx="22.5" ry="4" fill="#E2E8F0"/>
+    </g>
+    <!-- Large Paint Bucket -->
+    <g transform="translate(230, 55)">
+      <path d="M 0,10 L 65,10 L 58,75 L 7,75 Z" fill="#F8FAFC"/>
+      <rect x="0" y="25" width="63" height="30" fill="url(#accentOrange)"/>
+      <ellipse cx="32.5" cy="10" rx="32.5" ry="5" fill="#CBD5E1"/>
+      <text x="31" y="43" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#FFF" text-anchor="middle">PREMIUM</text>
+    </g>
+
+    <!-- Screw Drawers / Hardware Organizer (Shelf 2) -->
+    <g transform="translate(60, 150)">
+      <!-- Storage Cabinet -->
+      <rect x="0" y="0" width="180" height="68" rx="4" fill="#0F172A" stroke="#334155" stroke-width="2"/>
+      <!-- Grid of Small Drawers -->
+      <rect x="6" y="6" width="36" height="26" rx="2" fill="#334155"/>
+      <rect x="48" y="6" width="36" height="26" rx="2" fill="#334155"/>
+      <rect x="90" y="6" width="36" height="26" rx="2" fill="#334155"/>
+      <rect x="132" y="6" width="36" height="26" rx="2" fill="#334155"/>
+      
+      <rect x="6" y="36" width="36" height="26" rx="2" fill="#334155"/>
+      <rect x="48" y="36" width="36" height="26" rx="2" fill="#334155"/>
+      <rect x="90" y="36" width="36" height="26" rx="2" fill="#334155"/>
+      <rect x="132" y="36" width="36" height="26" rx="2" fill="#334155"/>
+      
+      <!-- Drawer Handles -->
+      <circle cx="24" cy="19" r="3" fill="#FF6B00"/>
+      <circle cx="66" cy="19" r="3" fill="#FF6B00"/>
+      <circle cx="108" cy="19" r="3" fill="#FF6B00"/>
+      <circle cx="150" cy="19" r="3" fill="#FF6B00"/>
+      <circle cx="24" cy="49" r="3" fill="#FF6B00"/>
+      <circle cx="66" cy="49" r="3" fill="#FF6B00"/>
+      <circle cx="108" cy="49" r="3" fill="#FF6B00"/>
+      <circle cx="150" cy="49" r="3" fill="#FF6B00"/>
+    </g>
+
+    <!-- Tool Boxes (Shelf 2 Right) -->
+    <g transform="translate(260, 155)">
+      <rect x="0" y="10" width="90" height="55" rx="5" fill="url(#accentOrange)"/>
+      <rect x="0" y="0" width="90" height="12" rx="3" fill="#1E293B"/>
+      <rect x="35" y="-3" width="20" height="6" rx="2" fill="url(#metalGrad)"/>
+      <rect x="15" y="25" width="15" height="15" rx="2" fill="url(#metalGrad)"/>
+      <rect x="60" y="25" width="15" height="15" rx="2" fill="url(#metalGrad)"/>
+    </g>
+
+    <!-- Electrical Cables & Tubes (Shelf 3) -->
+    <g transform="translate(60, 240)">
+      <!-- Cable Coils -->
+      <circle cx="35" cy="35" r="30" fill="none" stroke="#EF4444" stroke-width="14"/>
+      <circle cx="35" cy="35" r="30" fill="none" stroke="#F1F5F9" stroke-width="2"/>
+      
+      <circle cx="110" cy="35" r="30" fill="none" stroke="#3B82F6" stroke-width="14"/>
+      <circle cx="110" cy="35" r="30" fill="none" stroke="#F1F5F9" stroke-width="2"/>
+
+      <circle cx="185" cy="35" r="30" fill="none" stroke="#10B981" stroke-width="14"/>
+      <circle cx="185" cy="35" r="30" fill="none" stroke="#F1F5F9" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Hardware Store Service Counter Front -->
+  <g filter="url(#shadow)">
+    <!-- Counter desk -->
+    <path d="M 0,380 L 900,380 L 900,500 L 0,500 Z" fill="url(#counterGrad)"/>
+    <!-- Wooden Counter Top Edge -->
+    <rect x="0" y="370" width="900" height="16" fill="url(#woodGrad)"/>
+    <rect x="0" y="386" width="900" height="6" fill="#FF6B00"/>
+
+    <!-- Counter Front Logo Badge -->
+    <g transform="translate(330, 400)">
+      <rect x="0" y="0" width="240" height="75" rx="10" fill="#0F172A" stroke="#FF6B00" stroke-width="3"/>
+      <!-- Screw Icon -->
+      <g transform="translate(20, 15)">
+        <ellipse cx="20" cy="8" rx="16" ry="6" fill="url(#metalGrad)"/>
+        <line x1="10" y1="8" x2="30" y2="8" stroke="#1E293B" stroke-width="3"/>
+        <rect x="14" y="14" width="12" height="30" fill="url(#metalGrad)"/>
+        <!-- Screw Threads -->
+        <line x1="14" y1="20" x2="26" y2="22" stroke="#475569" stroke-width="2"/>
+        <line x1="14" y1="26" x2="26" y2="28" stroke="#475569" stroke-width="2"/>
+        <line x1="14" y1="32" x2="26" y2="34" stroke="#475569" stroke-width="2"/>
+      </g>
+      <text x="135" y="32" font-family="Arial, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">FERRETERÍA</text>
+      <text x="135" y="54" font-family="Arial, sans-serif" font-size="18" font-weight="900" fill="#FF6B00" text-anchor="middle">EL TORNILLO</text>
+    </g>
+
+    <!-- Items on the Counter Desk -->
+    <!-- Tape Measure -->
+    <g transform="translate(80, 335)">
+      <rect x="0" y="0" width="35" height="35" rx="8" fill="#FF6B00"/>
+      <circle cx="17.5" cy="17.5" r="10" fill="#1E293B"/>
+      <rect x="25" y="22" width="25" height="8" fill="url(#paintYellow)"/>
+    </g>
+    <!-- Screws lying on desk -->
+    <g transform="translate(160, 355)">
+      <line x1="0" y1="5" x2="35" y2="5" stroke="url(#metalGrad)" stroke-width="4"/>
+      <circle cx="0" cy="5" r="5" fill="url(#metalGrad)"/>
+      
+      <line x1="10" y1="12" x2="40" y2="12" stroke="url(#metalGrad)" stroke-width="5"/>
+      <circle cx="10" cy="12" r="6" fill="url(#metalGrad)"/>
+    </g>
+
+    <!-- Cash Register / Terminal on Right Counter -->
+    <g transform="translate(700, 305)">
+      <path d="M 10,40 L 70,40 L 80,65 L 0,65 Z" fill="#334155"/>
+      <rect x="15" y="10" width="50" height="30" rx="3" fill="#0F172A" stroke="#475569" stroke-width="2"/>
+      <text x="40" y="30" font-family="monospace" font-size="12" fill="#10B981" text-anchor="middle">$ 0.00</text>
+    </g>
+  </g>
+</svg>
