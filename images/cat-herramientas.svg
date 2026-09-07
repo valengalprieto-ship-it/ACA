@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="metalH" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="50%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#64748B"/>
+    </linearGradient>
+    <linearGradient id="orangeH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B00"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="blueH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F4C81"/>
+      <stop offset="100%" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="woodH" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    <filter id="shadowH" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Card Background -->
+  <rect width="500" height="350" rx="12" fill="url(#bgGradH)"/>
+  
+  <!-- Decorative Grid Lines -->
+  <g stroke="#334155" stroke-width="1" opacity="0.4">
+    <line x1="0" y1="75" x2="500" y2="75"/>
+    <line x1="0" y1="150" x2="500" y2="150"/>
+    <line x1="0" y1="225" x2="500" y2="225"/>
+    <line x1="0" y1="300" x2="500" y2="300"/>
+    <line x1="125" y1="0" x2="125" y2="350"/>
+    <line x1="250" y1="0" x2="250" y2="350"/>
+    <line x1="375" y1="0" x2="375" y2="350"/>
+  </g>
+
+  <!-- 1. Cordless Drill (Left Background) -->
+  <g filter="url(#shadowH)" transform="translate(60, 40) rotate(-15)">
+    <!-- Drill Body -->
+    <path d="M 40,20 L 140,20 C 155,20 165,30 165,45 L 160,75 C 150,85 130,90 110,85 L 85,170 C 80,180 65,185 50,180 L 35,175 C 25,170 20,155 25,140 L 50,80 L 40,75 Z" fill="url(#blueH)"/>
+    <!-- Battery Pack -->
+    <rect x="20" y="165" width="70" height="35" rx="6" fill="#0F172A" stroke="url(#orangeH)" stroke-width="3"/>
+    <!-- Rubber Grip -->
+    <rect x="42" y="95" width="30" height="60" rx="4" fill="url(#orangeH)" opacity="0.9"/>
+    <!-- Chuck & Bit -->
+    <rect x="165" y="32" width="30" height="30" rx="4" fill="#334155"/>
+    <polygon points="195,42 240,47 195,52" fill="url(#metalH)"/>
+    <!-- Trigger -->
+    <path d="M 60,60 L 48,70 L 60,80 Z" fill="url(#orangeH)"/>
+  </g>
+
+  <!-- 2. Claw Hammer (Diagonal Center-Right) -->
+  <g filter="url(#shadowH)" transform="translate(230, 60) rotate(35)">
+    <!-- Handle -->
+    <rect x="25" y="40" width="22" height="190" rx="6" fill="url(#woodH)"/>
+    <!-- Rubber Base -->
+    <rect x="22" y="170" width="28" height="65" rx="5" fill="url(#orangeH)"/>
+    <!-- Hammer Head -->
+    <path d="M 5,20 L 65,20 L 70,45 L 5,45 Z" fill="url(#metalH)"/>
+    <!-- Claw -->
+    <path d="M 5,20 Q -15,5 -30,-5 L -20,20 Q -5,27 5,32 Z" fill="url(#metalH)"/>
+    <!-- Striking face -->
+    <rect x="65" y="15" width="12" height="35" rx="3" fill="url(#metalH)"/>
+  </g>
+
+  <!-- 3. Adjustable Wrench (Right) -->
+  <g filter="url(#shadowH)" transform="translate(320, 90) rotate(-25)">
+    <!-- Handle -->
+    <rect x="18" y="50" width="20" height="150" rx="5" fill="url(#metalH)"/>
+    <rect x="15" y="140" width="26" height="60" rx="5" fill="url(#blueH)"/>
+    <!-- Head -->
+    <path d="M 0,15 C 0,-10 56,-10 56,15 L 48,50 L 8,50 Z" fill="url(#metalH)"/>
+    <!-- Knurl Screw -->
+    <rect x="18" y="25" width="20" height="14" rx="2" fill="#334155"/>
+  </g>
+
+  <!-- 4. Screwdriver (Bottom Center) -->
+  <g filter="url(#shadowH)" transform="translate(140, 240) rotate(-70)">
+    <!-- Shaft -->
+    <rect x="80" y="12" width="110" height="12" fill="url(#metalH)"/>
+    <polygon points="190,12 210,18 190,24" fill="url(#metalH)"/>
+    <!-- Handle -->
+    <rect x="0" y="0" width="85" height="36" rx="10" fill="url(#orangeH)"/>
+    <rect x="15" y="0" width="12" height="36" fill="#0F172A"/>
+    <rect x="45" y="0" width="12" height="36" fill="#0F172A"/>
+  </g>
+
+  <!-- 5. Tape Measure (Bottom Right) -->
+  <g filter="url(#shadowH)" transform="translate(350, 220)">
+    <rect x="0" y="0" width="70" height="65" rx="14" fill="url(#orangeH)"/>
+    <circle cx="35" cy="32.5" r="20" fill="#0F172A"/>
+    <text x="35" y="37" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#FFF" text-anchor="middle">5m</text>
+    <!-- Tape blade extending -->
+    <rect x="-40" y="42" width="45" height="15" fill="url(#metalH)"/>
+    <line x1="-30" y1="42" x2="-30" y2="50" stroke="#000" stroke-width="2"/>
+    <line x1="-20" y1="42" x2="-20" y2="52" stroke="#000" stroke-width="2"/>
+    <line x1="-10" y1="42" x2="-10" y2="50" stroke="#000" stroke-width="2"/>
+  </g>
+</svg>
