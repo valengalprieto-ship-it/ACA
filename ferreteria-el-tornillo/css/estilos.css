@@ -474,10 +474,16 @@ ul {
   transition: var(--transicion);
 }
 
-.tarjeta-producto:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--sombra-elevada);
-  border-top-color: var(--color-acento);
+@media (hover: hover) and (min-width: 769px) {
+  .tarjeta-producto:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-elevada);
+    border-top-color: var(--color-acento);
+  }
+
+  .tarjeta-producto:hover .tarjeta-imagen {
+    transform: scale(1.08);
+  }
 }
 
 .tarjeta-imagen-wrapper {
@@ -509,10 +515,6 @@ ul {
   object-fit: contain;
   transition: transform 0.4s ease;
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
-}
-
-.tarjeta-producto:hover .tarjeta-imagen {
-  transform: scale(1.08);
 }
 
 .tarjeta-contenido {
@@ -831,6 +833,11 @@ ul {
 
 /* MÓVILES (< 768px) */
 @media (max-width: 768px) {
+  .contenedor {
+    width: 92%;
+    padding: 0 12px;
+  }
+
   .header-contenido {
     flex-direction: column;
     height: auto;
@@ -859,8 +866,58 @@ ul {
     animation: none !important; /* Desactivar animación en móvil para maximizar rendimiento */
   }
 
+  /* SECCIÓN SERVICIOS Y PRODUCTOS EN MÓVIL (375px - 430px) */
+  .seccion-productos {
+    padding: 60px 0;
+  }
+
+  .encabezado-seccion {
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+
+  .encabezado-seccion h2 {
+    font-size: 2.2rem;
+  }
+
   .grid-productos {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Una sola columna vertical para evitar compresión */
+    gap: 24px;
+  }
+
+  .tarjeta-producto {
+    transform: none !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .tarjeta-imagen-wrapper {
+    aspect-ratio: 16 / 9;
+    max-height: 190px;
+    padding: 18px;
+  }
+
+  .tarjeta-imagen {
+    transform: none !important;
+    max-height: 150px;
+  }
+
+  .tarjeta-contenido {
+    padding: 20px 18px;
+  }
+
+  .tarjeta-titulo {
+    font-size: 1.45rem;
+    margin-bottom: 8px;
+  }
+
+  .tarjeta-descripcion {
+    font-size: 0.94rem;
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .tarjeta-ejemplos {
+    padding: 12px 14px;
   }
 
   .tarjeta-info-contacto, .contenedor-formulario {
