@@ -1,0 +1,874 @@
+/* ==========================================================================
+   FERRETERÍA EL TORNILLO - HOJA DE ESTILOS PRINCIPAL (MEJORA ESTÉTICA FINAL)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* 1. VARIABLES Y SISTEMA DE DISEÑO */
+:root {
+  /* Fuentes Institucionales */
+  --fuente-titulos: 'Barlow Condensed', sans-serif;
+  --fuente-principal: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Colores Principales (Identidad de Ferretería) */
+  --color-primario: #0F4C81;
+  --color-primario-oscuro: #0B375D;
+  --color-primario-claro: #1E6BB8;
+  
+  /* Color de Acento (Construcción / Seguridad) */
+  --color-acento: #FF6B00;
+  --color-acento-oscuro: #D95800;
+  --color-acento-hover: #FF8533;
+
+  /* Tonos Neutros */
+  --color-texto: #1E293B;
+  --color-texto-secundario: #475569;
+  --color-fondo: #F4F6F9;
+  --color-tarjeta: #FFFFFF;
+  --color-borde: #E2E8F0;
+
+  /* Colores de Estado (Mensajes de Formulario) */
+  --color-error-texto: #991B1B;
+  --color-error-fondo: #FEE2E2;
+  --color-error-borde: #FCA5A5;
+
+  --color-exito-texto: #166534;
+  --color-exito-fondo: #DCFCE7;
+  --color-exito-borde: #86EFAC;
+
+  /* Sombras y Bordes */
+  --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.06);
+  --sombra-media: 0 10px 30px rgba(15, 76, 129, 0.14);
+  --sombra-elevada: 0 20px 40px rgba(15, 76, 129, 0.22);
+  --radio-borde: 12px;
+  --radio-boton: 8px;
+  --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 2. RESET Y ESTILOS BASE */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* 3. LAYOUT Y CONTENEDOR */
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* 4. ENCABEZADO Y NAVEGACIÓN STICKY (TRANSICIÓN LIMPIA) */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #FFFFFF;
+  border-bottom: 3px solid var(--color-primario);
+  box-shadow: var(--sombra-suave);
+}
+
+.header-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-primario);
+  transition: var(--transicion);
+}
+
+.logo:hover {
+  transform: scale(1.02);
+}
+
+.logo-icono {
+  color: var(--color-acento);
+  filter: drop-shadow(0 2px 4px rgba(255, 107, 0, 0.3));
+}
+
+.logo-texto {
+  font-family: var(--fuente-titulos);
+  font-size: 1.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.logo-texto strong {
+  color: var(--color-acento);
+  font-weight: 900;
+}
+
+.navegacion {
+  display: flex;
+}
+
+.nav-lista {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-enlace {
+  font-family: var(--fuente-principal);
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--color-texto);
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: var(--transicion);
+  position: relative;
+}
+
+.nav-enlace:hover, .nav-enlace:focus {
+  color: var(--color-acento);
+  background-color: #FFF4EC;
+}
+
+.nav-enlace::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-acento);
+  transition: var(--transicion);
+  transform: translateX(-50%);
+}
+
+.nav-enlace:hover::after {
+  width: 60%;
+}
+
+/* 5. SECCIÓN HERO (INICIO) CON FONDO AZUL INDUSTRIAL Y PATRÓN GEOMÉTRICO GEOMETRICO DE TUERCAS */
+.seccion-hero {
+  padding: 90px 0 100px 0;
+  background: 
+    radial-gradient(circle at 85% 20%, rgba(255, 107, 0, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 15% 80%, rgba(30, 107, 184, 0.12) 0%, transparent 40%),
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.04' fill-rule='evenodd'%3E%3Cpath d='M20 0l20 11.5v23L20 40 0 34.5v-23L20 0zm0 4.618L4 13.854v16.292L20 35.382l16-9.236V13.854L20 4.618z'/%3E%3C/g%3E%3C/svg%3E"),
+    linear-gradient(135deg, #0A1E30 0%, #0F3553 50%, #123B5D 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* SIN FRANJA NI LÍNEA DE SEPARACIÓN MARCADA (TRANSICIÓN LIMPIA) */
+.seccion-hero::before {
+  display: none !important;
+}
+
+.grid-hero {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* INSIGNIA CON ANIMACIÓN DISCRETA DE LA LLAVE INGLESA */
+.badge-negocio {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-family: var(--fuente-titulos);
+  font-weight: 800;
+  font-size: 0.92rem;
+  padding: 8px 18px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+/* MICROINTERACCIÓN ANIMADA EN CSS (ROTACIÓN SUAVE DE LA HERRAMIENTA) */
+.icono-animado-herramienta {
+  color: var(--color-acento);
+  display: inline-block;
+  transform-origin: center center;
+  animation: wrenchRotate 4s ease-in-out infinite;
+}
+
+@keyframes wrenchRotate {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-14deg);
+  }
+  75% {
+    transform: rotate(14deg);
+  }
+}
+
+.hero-titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.05;
+  margin-bottom: 18px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.hero-eslogan {
+  font-family: var(--fuente-principal);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #FF8533;
+  margin-bottom: 18px;
+  line-height: 1.45;
+}
+
+.hero-descripcion {
+  font-family: var(--fuente-principal);
+  font-size: 1.05rem;
+  color: #CBD5E1;
+  margin-bottom: 32px;
+  line-height: 1.65;
+}
+
+/* DATOS DE NEGOCIO EN HERO */
+.datos-negocio {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: rgba(255, 255, 255, 0.07);
+  padding: 22px 24px;
+  border-radius: var(--radio-borde);
+  border-left: 6px solid var(--color-acento);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  margin-bottom: 35px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(6px);
+}
+
+.dato-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.dato-icono {
+  width: 26px;
+  height: 26px;
+  color: #FF6B00;
+  flex-shrink: 0;
+  margin-top: 2px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.dato-item strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 1.05rem;
+  color: #FFFFFF;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.dato-item p {
+  font-family: var(--fuente-principal);
+  font-size: 0.98rem;
+  color: #E2E8F0;
+  font-weight: 500;
+}
+
+/* BOTONES MEJORADOS CON BORDES REDONDEADOS MODERADOS Y ACCIÓN EN NARANJA */
+.hero-acciones {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 32px;
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  border-radius: var(--radio-boton);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transicion);
+  text-align: center;
+}
+
+.btn-principal {
+  background: linear-gradient(135deg, var(--color-acento) 0%, var(--color-acento-oscuro) 100%);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(255, 107, 0, 0.35);
+}
+
+.btn-principal:hover, .btn-principal:focus {
+  background: linear-gradient(135deg, var(--color-acento-hover) 0%, var(--color-acento) 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 107, 0, 0.45);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: var(--sombra-suave);
+}
+
+.btn-secundario:hover, .btn-secundario:focus {
+  background-color: #FFFFFF;
+  color: #0F3553;
+  border-color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-media);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+/* MARCO VISUAL DEL HERO (MAYOR PROTAGONISMO) */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  width: 104%;
+  height: 104%;
+  background: radial-gradient(circle, rgba(255, 107, 0, 0.22) 0%, transparent 70%);
+  border-radius: calc(var(--radio-borde) + 6px);
+  z-index: 0;
+  filter: blur(14px);
+}
+
+.imagen-hero {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 580px;
+  border-radius: var(--radio-borde);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  transition: var(--transicion);
+  background-color: #0F172A;
+}
+
+.imagen-hero:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* 6. SECCIÓN SERVICIOS Y PRODUCTOS (CATÁLOGO CON PATRÓN GRIS CONSERVADO) */
+.seccion-productos {
+  padding: 100px 0;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(15, 76, 129, 0.04) 0%, transparent 60%),
+    url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2394a3b8' fill-opacity='0.07' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E"),
+    var(--color-fondo);
+}
+
+.encabezado-seccion {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 60px auto;
+}
+
+.subtitulo-seccion {
+  display: inline-block;
+  font-family: var(--fuente-titulos);
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--color-acento);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background-color: #FFF4EC;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  border: 1px solid #FFE0CC;
+}
+
+.encabezado-seccion h2 {
+  font-family: var(--fuente-titulos);
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--color-primario);
+  margin: 8px 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.descripcion-seccion {
+  font-family: var(--fuente-principal);
+  font-size: 1.1rem;
+  color: var(--color-texto-secundario);
+}
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.tarjeta-producto {
+  background-color: var(--color-tarjeta);
+  border-radius: var(--radio-borde);
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+  border: 1px solid var(--color-borde);
+  border-top: 4px solid var(--color-primario);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transicion);
+}
+
+.tarjeta-producto:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-elevada);
+  border-top-color: var(--color-acento);
+}
+
+.tarjeta-imagen-wrapper {
+  background: radial-gradient(circle at 50% 50%, #1E293B 0%, #0F172A 100%);
+  padding: 22px;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 3px solid var(--color-acento);
+}
+
+.tarjeta-imagen-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 12px 12px;
+  opacity: 0.6;
+}
+
+.tarjeta-imagen {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4));
+}
+
+.tarjeta-producto:hover .tarjeta-imagen {
+  transform: scale(1.08);
+}
+
+.tarjeta-contenido {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tarjeta-titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--color-primario);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tarjeta-descripcion {
+  font-family: var(--fuente-principal);
+  font-size: 0.96rem;
+  color: var(--color-texto-secundario);
+  margin-bottom: 20px;
+  line-height: 1.55;
+  flex-grow: 1;
+}
+
+.tarjeta-ejemplos {
+  background-color: #F8FAFC;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border-left: 4px solid var(--color-acento);
+  border-top: 1px solid #EDF2F7;
+  border-right: 1px solid #EDF2F7;
+  border-bottom: 1px solid #EDF2F7;
+}
+
+.tarjeta-ejemplos strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 0.95rem;
+  color: var(--color-primario);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tarjeta-ejemplos p {
+  font-family: var(--fuente-principal);
+  font-size: 0.9rem;
+  color: var(--color-texto);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* 7. SECCIÓN CONTACTO */
+.seccion-contacto {
+  padding: 100px 0;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--color-borde);
+}
+
+.grid-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 45px;
+  align-items: start;
+}
+
+.tarjeta-info-contacto {
+  background: 
+    radial-gradient(circle at 90% 10%, rgba(255, 107, 0, 0.15) 0%, transparent 40%),
+    linear-gradient(135deg, var(--color-primario) 0%, var(--color-primario-oscuro) 100%);
+  color: #FFFFFF;
+  padding: 45px;
+  border-radius: var(--radio-borde);
+  box-shadow: var(--sombra-elevada);
+}
+
+.info-titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-invitacion {
+  font-family: var(--fuente-principal);
+  font-size: 1.02rem;
+  color: #E2E8F0;
+  margin-bottom: 38px;
+  line-height: 1.65;
+}
+
+.info-detalles {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.info-bloque {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.info-icono {
+  width: 30px;
+  height: 30px;
+  color: var(--color-acento);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.info-bloque h4 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  font-weight: 800;
+  margin-bottom: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-bloque p {
+  font-family: var(--fuente-principal);
+  font-size: 0.98rem;
+  color: #CBD5E1;
+}
+
+/* FORMULARIO DE CONSULTA */
+.contenedor-formulario {
+  background-color: var(--color-fondo);
+  padding: 45px;
+  border-radius: var(--radio-borde);
+  border: 1px solid var(--color-borde);
+  box-shadow: var(--sombra-media);
+}
+
+.form-titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--color-primario);
+  margin-bottom: 26px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo-etiqueta {
+  font-family: var(--fuente-principal);
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--color-texto);
+}
+
+.requerido {
+  color: var(--color-acento);
+}
+
+.campo-input, .campo-textarea {
+  width: 100%;
+  padding: 15px 18px;
+  font-size: 1rem;
+  font-family: var(--fuente-principal);
+  color: var(--color-texto);
+  background-color: #FFFFFF;
+  border: 2px solid var(--color-borde);
+  border-radius: var(--radio-boton);
+  transition: var(--transicion);
+}
+
+.campo-input:focus, .campo-textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 4px rgba(15, 76, 129, 0.15);
+}
+
+.campo-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* MENSAJES DE ESTADO DINÁMICOS EN JAVASCRIPT */
+.mensaje-estado {
+  padding: 16px 20px;
+  border-radius: 10px;
+  font-family: var(--fuente-principal);
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin-top: 6px;
+}
+
+.mensaje-estado.error {
+  background-color: var(--color-error-fondo);
+  color: var(--color-error-texto);
+  border: 2px solid var(--color-error-borde);
+}
+
+.mensaje-estado.exito {
+  background-color: var(--color-exito-fondo);
+  color: var(--color-exito-texto);
+  border: 2px solid var(--color-exito-borde);
+}
+
+/* CLASE DE OCULTACIÓN (OBLIGATORIA) */
+.hidden {
+  display: none !important;
+}
+
+/* 8. PIE DE PÁGINA (FOOTER) */
+.footer {
+  background-color: #0F172A;
+  color: #94A3B8;
+  padding: 70px 0 25px 0;
+  border-top: 5px solid var(--color-acento);
+}
+
+.footer-contenido {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 45px;
+}
+
+.logo-footer {
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.footer-columna h4 {
+  font-family: var(--fuente-titulos);
+  font-size: 1.4rem;
+  color: #FFFFFF;
+  font-weight: 800;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.footer-enlaces {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-enlaces a {
+  font-family: var(--fuente-principal);
+  font-weight: 600;
+  transition: var(--transicion);
+}
+
+.footer-enlaces a:hover {
+  color: var(--color-acento);
+  padding-left: 4px;
+}
+
+.footer-copyright {
+  text-align: center;
+  padding-top: 28px;
+  border-top: 1px solid #334155;
+  font-family: var(--fuente-principal);
+  font-size: 0.9rem;
+  color: #64748B;
+}
+
+/* 9. ADAPTABILIDAD RESPONSIVE (MEDIA QUERIES) */
+
+/* TABLETS (< 1024px) */
+@media (max-width: 1024px) {
+  .grid-productos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .grid-hero {
+    grid-template-columns: 1fr;
+    gap: 55px;
+    text-align: center;
+  }
+
+  .badge-negocio {
+    margin: 0 auto 20px auto;
+  }
+
+  .datos-negocio {
+    text-align: left;
+  }
+
+  .hero-acciones {
+    justify-content: center;
+  }
+
+  .grid-contacto {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
+
+/* MÓVILES (< 768px) */
+@media (max-width: 768px) {
+  .header-contenido {
+    flex-direction: column;
+    height: auto;
+    padding: 16px 10px;
+    gap: 14px;
+  }
+
+  .nav-lista {
+    gap: 8px;
+  }
+
+  .nav-enlace {
+    font-size: 0.92rem;
+    padding: 8px 12px;
+  }
+
+  .hero-titulo {
+    font-size: 2.5rem;
+  }
+
+  .hero-eslogan {
+    font-size: 1.15rem;
+  }
+
+  .icono-animado-herramienta {
+    animation: none !important; /* Desactivar animación en móvil para maximizar rendimiento */
+  }
+
+  .grid-productos {
+    grid-template-columns: 1fr;
+  }
+
+  .tarjeta-info-contacto, .contenedor-formulario {
+    padding: 28px 20px;
+  }
+
+  .footer-contenido {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+}
